@@ -1,7 +1,303 @@
 {
-    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 80, AccessModifierOffset: -4 }",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
-    "files.insertFinalNewline": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "cstdio": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "*.vue": "vue",
+        "*.wpy": "vue",
+        "*.wxml": "html",
+        "*.wxss": "css",
+        "atomic": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "unordered_map": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "initializer_list": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp",
+        "chrono": "cpp",
+        "thread": "cpp",
+        "winsock2.h": "c",
+        "ws2tcpip.h": "c",
+        "windows.h": "c",
+        "stdio.h": "c",
+        "ctime": "cpp",
+        "iomanip": "cpp",
+        "telpb.h": "c"
+    },
+    "files.defaultLanguage": "cpp", // ctrl+N新建文件后默认的语言
+    "editor.formatOnType": true, // 输入时就进行格式化，默认触发字符较少，分号可以触发
+    //失去焦点后自动保存
+    "files.autoSave": "onFocusChange",
+    //值设置为true时，每次保存的时候自动格式化；
+    "editor.formatOnSave": false,
+    "code-runner.saveFileBeforeRun": true, // run code前保存
+    "code-runner.saveAllFilesBeforeRun": true,
+    "editor.snippetSuggestions": "top", // snippets代码优先显示补全
+    //C++
+    "C_Cpp.updateChannel": "Insiders",
+    "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
+    "code-runner.executorMap": {
+      "c": "cd $dir && g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c11 && $dir$fileNameWithoutExt",
+      "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -lglut32 -lglu32 -lopengl32 -std=c++17 && $dir$fileNameWithoutExt"
+    }, // 设置code runner的命令行
+ 
+    "code-runner.preserveFocus": true, // 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false
+    "code-runner.clearPreviousOutput": false, // 每次run code前清空属于code runner的终端消息
+    "C_Cpp.clang_format_sortIncludes": true, // 格式化时调整include的顺序（按字母排序）
+    "C_Cpp.intelliSenseEngine": "Tag Parser", //避免出现标识符未定义，头文件可跳转的问题
+    "C_Cpp.intelliSenseEngineFallback": "Disabled", 
+    "cmake.configureOnOpen": true,
+    "C_Cpp.default.compilerPath": "C:/MinGW/bin/gcc.exe",
+    "C_Cpp.default.includePath": ["C:/MinGW/lib"],
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    //Python
+    "python.pythonPath": "C:/Python/python.exe",
+    //git
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showAbbreviationSuggestions": true,
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html",
+    "wpy": "html",
+    "javascript": "html"
+    },
+
+    "workbench.colorTheme": "Monokai",//主题风格
+    "workbench.iconTheme": "vscode-icons",
+    "editor.minimap.enabled": true,//小地图
+    "explorer.confirmDelete": false,////删除文件确认
+    "editor.fontSize": 14,//文本字体大小
+    "window.zoomLevel": 0.5,//界面字体大小
+    "editor.wordWrap": "on",//自动换行
+    "editor.tabSize": 4,// 重新设定tabsize
+    "editor.detectIndentation": false,
+    "editor.tokenColorCustomizations": 
+    {
+    "[Monokai]": 
+    {
+        "comments": "#55aa7f", // 注释
+        "keywords": "#ff55ff", // 关键字
+        "variables": "#5eccf8", // 变量名 函数的参数名 
+        "strings": "#00ff7f", // 字符串
+        "functions": "#ffbb00", // 自定义及内置的函数名称 如：print
+        "numbers": "#00eeff", // 数字
+        "types": "#55bbff", //类定义颜色
+        "textMateRules": 
+        [
+            //系统内置的函数名称的颜色 如：print len 
+            {
+                "scope": "support.function",
+                "settings": {
+                    "foreground": "#ffbb00",
+                }
+            },
+            //类的名称颜色 如class abc() 中的abc
+            {
+                "scope": "entity.name.type", //函数和类的名称颜色
+                "settings": {
+                    "foreground": "#14fff3",
+                }
+            },
+            //类和函数的定义单词颜色 def class
+            {
+                "scope": "storage.type", //void int char 
+                "settings": {
+                    "foreground": "#ff00c8",
+                }
+            },
+            //不知道是什么
+            {
+                "scope": "storage.modifier", //static const
+                "settings": {
+                    "foreground": "#ffe600de",
+                }
+            },
+            //运算符号，如 +-*/=
+            {
+                "scope": "keyword.operator", //=等号/赋值号 |= &=
+                "settings": {
+                    "foreground": "#ff55ff",
+                }
+            },
+            // 系统的控制关键词：如 if pass return f
+            {
+                "scope": "keyword.control", //if switch break return
+                "settings": {
+                    "foreground": "#ff00c8",
+                    "fontStyle": ""
+                }
+            },
+            //逻辑符号：如 and  or 
+            {
+                "scope": "keyword.operator.logical", //逻辑符号 && || !
+                "settings": {
+                    "foreground": "#ff00c8",
+                    "fontStyle": ""
+                }
+            },
+            //换行符、转义符等如 ：\r \n
+            {
+                "scope": "constant.character.escape", //"\r\n"
+                "settings": {
+                    "foreground": "#ee5050",
+                    "fontStyle": ""
+                }
+            },
+            //不知道是什么
+            {
+                "scope": "variable.other", //结构体对象和成员等
+                "settings": { //VSCode使用C的颜色限制，这一点比较坑
+                    "foreground": "#4f1eff", //比如Public.Delay(),颜色是一起变得
+                    "fontStyle": "" //不能单独设置Public和Delay的显示颜色
+                } //可能因为VS Code主要用于前端，对C的支持不够完善
+            },
+            //函数的参数名称
+            {
+                "scope": "variable.parameter", //函数参数-定义阶段
+                "settings": {
+                    "foreground": "#5eccf8",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "entity.name.section", //函数参数-调用阶段
+                "settings": {
+                    "foreground": "#ff0000",
+                    "fontStyle": ""
+                }
+            },
+            // 左单双引号
+            {
+                "scope": "punctuation.definition.string.begin",
+                "settings": {
+                    "foreground": "#00ff7f",
+                    "fontStyle": "bold"
+                }
+            },
+            //右单双引号
+            {
+                "scope": "punctuation.definition.string.end",
+                "settings": {
+                    "foreground": "#00ff7f",
+                    "fontStyle": "bold" //加粗
+                }
+            },
+            {
+                "scope": [
+                    "constant.other.symbol",
+                ],
+                "settings": {
+                    "foreground": "#ff0000"
+                }
+            }
+        ]
+    }
+  },
+    "editor.rulers": [
+    ],
+    // 在使用搜索功能时，将这些文件夹/文件排除在外
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/target": true,
+        "**/logs": true,
+    }, 
+    // 这些文件将不会显示在工作空间中
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js": {
+            "when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作空中
+        },
+        "**/node_modules": true
+    }, 
+    // #让vue中的js按"prettier"格式进行格式化
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "prettier",
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            // #vue组件中html代码格式化样式
+            "wrap_attributes": "force-aligned", //也可以设置为“auto”，效果会不一样
+            "wrap_line_length": 200,
+            "end_with_newline": false,
+            "semi": false,
+            "singleQuote": true
+        },
+        "prettier": {
+            "semi": false,
+            "singleQuote": true
+        },
+    },
+    //background 的相关配置
+    "background.editor":{
+        "useFront": true,
+        "style": {
+            "background-position": "100% 100%",
+            "background-size": "auto",
+            "opacity": 0.6
+        },
+        "styles": [
+            {"content": "''"},
+            {"pointer-events": "none"},
+            {"position": "absolute"},
+            {"width": "100%"},
+            {"height": "100%"},
+            {"z-index": "99999"},    
+            {"background.repeat": "no-repeat"},
+            {"background-size": "100%,100%"},    
+            {"opacity": 0.2},    
+        ],
+        "images": ["file://C:/APP/VSCode/background.jpg"],
+        "interval": 0,
+        "random": false
+    },
+    "background.fullscreen": {
+        "images": ["file://C:/APP/VSCode/background.jpg"],
+        "opacity": 0.1,
+        "size": "cover",
+        "position": "center",
+        "interval": 0,
+        "random": false
+    },
 }
